@@ -22,7 +22,9 @@ An Airbnb-inspired web application where users can explore listings, create thei
 
 - Node.js
 - Express.js
-  ####Frontend
+
+#### Frontend
+
 - EJS (Embedded JavaScript Templates)
 - CSS
 - Vanilla JavaScript
