@@ -4,7 +4,7 @@ An Airbnb-inspired web application where users can explore listings, create thei
 
 # Live Demo
 
-🔗 https://your-render-url.onrender.com
+🔗 https://airbnb-clone-5q0f.onrender.com
 
 # Features
 
@@ -78,7 +78,7 @@ An Airbnb-inspired web application where users can explore listings, create thei
 # Installation & Setup
 
 1. Clone the repository
-   git clone https://github.com/your-username/wanderlust.git <br>
+   git clone https://github.com/SatyamS2129/wanderlust.git <br>
    cd wanderlust
 2. Install dependencies
    npm install
