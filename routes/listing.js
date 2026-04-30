@@ -21,6 +21,9 @@ router
     wrapAsync(listingController.createListing),
   );
 
+// filter route
+router.route("/filter").get(wrapAsync(listingController.filter));
+
 // New Route (it should be written before show route as new and :id can be misjudged)
 router.get("/new", isLoggedIn, listingController.renderNewForm);
 

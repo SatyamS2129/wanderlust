@@ -29,6 +29,11 @@ module.exports.showListing = async (req, res) => {
     res.render("listings/show.ejs", { listing });
   }
 };
+module.exports.filter = async (req, res) => {
+  let selected = req.query.selected;
+  const allListings = await Listing.find({ category: selected });
+  res.render("listings/index.ejs", { allListings, selected });
+};
 
 module.exports.createListing = async (req, res) => {
   // let {title, description, image, price, location, country} = req.body;
