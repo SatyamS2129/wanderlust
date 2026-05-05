@@ -21,3 +21,29 @@
     );
   });
 })();
+
+// filter feature in index.ejs
+let taxSwitch = document.querySelector("#switchCheckDefault");
+taxSwitch.addEventListener("click", () => {
+  let taxInfo = document.querySelectorAll("#tax-info");
+  for (info of taxInfo) {
+    info.classList.toggle("tax-info");
+  }
+});
+
+const radios = document.querySelectorAll('input[type="radio"]');
+// Add event listener to each
+radios.forEach((radio) => {
+  radio.addEventListener("change", function () {
+    sessionStorage.setItem("selectedRadio", radio.value);
+    this.form.submit(); // Automatically submits the parent form
+  });
+});
+
+window.onload = () => {
+  const savedValue = sessionStorage.getItem("selectedRadio");
+  if (savedValue) {
+    document.querySelector(`input[value="${savedValue}"]`).checked = true;
+    sessionStorage.removeItem("selectedRadio");
+  }
+};

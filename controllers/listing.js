@@ -5,6 +5,12 @@ module.exports.index = async (req, res) => {
   res.render("listings/index.ejs", { allListings });
 };
 
+module.exports.filter = async (req, res) => {
+  let selected = req.query.selected;
+  const allListings = await Listing.find({ category: selected });
+  res.render("listings/index.ejs", { allListings });
+};
+
 module.exports.renderNewForm = (req, res) => {
   // // using isAuthenticate as middleware
   res.render("listings/new.ejs");
@@ -28,11 +34,6 @@ module.exports.showListing = async (req, res) => {
   } else {
     res.render("listings/show.ejs", { listing });
   }
-};
-module.exports.filter = async (req, res) => {
-  let selected = req.query.selected;
-  const allListings = await Listing.find({ category: selected });
-  res.render("listings/index.ejs", { allListings, selected });
 };
 
 module.exports.createListing = async (req, res) => {

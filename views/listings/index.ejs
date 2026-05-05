@@ -1,54 +1,9 @@
 <%- layout('layouts/boilerplate') -%>
 
-<style>
-#filters {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    margin-bottom: 2rem;
-}
-.filter {
-    text-align: center;
-    margin-right: 2rem;
-    margin-top: 2rem;
-    opacity: 0.5;
-}
-.filter:hover {
-    opacity: 1;
-    cursor: pointer;
-}
-.btn-check:checked + label .filter {
-    opacity: 1;
-    transform: scale(1.1);
-}
-.filter p {
-    font-size: 0.8rem;
-}
-.tax-info {
-    display: none;
-}
-.tax-toggle {
-    border: 1px solid rgb(154, 151, 151);
-    border-radius: 1rem;
-    height: 3rem;
-    padding: 0.5rem;
-    margin-left: 8rem;
-    display: flex;
-    align-items: center;
-
-}
-.btn {
-    border: none;
-
-}
-
-
-</style>
-
 <form method="GET" action="/listings/filter">
 <div id="filters">
 
-<input type="radio" class="btn-check" name="selected" id="trending" autocomplete="off" checked>
+<input type="radio" class="btn-check" name="selected" id="trending" autocomplete="off">
 <label class="btn" for="trending">
     <div class="filter">
     <div><i class="fa-solid fa-fire"></i></div>
@@ -121,7 +76,7 @@
     </div>
 </label>
 
-<input type="radio" class="btn-check" name="selected" id="domes" autocomplete="off" value="Domes">
+<input type="radio" class="btn-check" name="selected" id="domes" autocomplete="off" value="Domes" >
 <label class="btn" for="domes">
     <div class="filter">
     <div><i class="fa-solid fa-igloo"></i></div>
@@ -161,25 +116,3 @@
     </a>
 <% } %>    
 </div>
-
-<script>
-    let taxSwitch = document.querySelector("#switchCheckDefault");
-    taxSwitch.addEventListener("click", () => {
-        let taxInfo = document.querySelectorAll("#tax-info");
-        for(info of taxInfo) {
-            info.classList.toggle("tax-info");
-        }
-    });
-
-
-    const radios = document.querySelectorAll('input[type="radio"]');
-    // Add event listener to each
-    radios.forEach(radio => {
-        radio.addEventListener('change', function() {
-            this.form.submit(); // Automatically submits the parent form
-        });
-    });
-
-
-
-</script>

@@ -20,8 +20,6 @@ const flash = require("connect-flash");
 const ejsMate = require("ejs-mate");
 const Review = require("./models/reviews.js");
 
-// const MONGO_URL = "mongodb://127.0.0.1:27017/wanderlust";
-
 const dbUrl = process.env.ATLASDB_URL;
 
 const ExpressError = require("./utils/ExpressError.js");
